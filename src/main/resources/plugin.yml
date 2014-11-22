@@ -1,0 +1,4 @@
+main: com.minegusta.bungeeteleport.Main
+author: janie177
+name: BungeeTeleport
+version: ${project.version}
