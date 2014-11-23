@@ -5,8 +5,6 @@ import net.md_5.bungee.api.CommandSender;
 import net.md_5.bungee.api.chat.ComponentBuilder;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
 import net.md_5.bungee.api.plugin.Command;
-import net.md_5.bungee.api.plugin.Plugin;
-import org.bukkit.Bukkit;
 
 public class Commands extends Command
 {
@@ -31,10 +29,7 @@ public class Commands extends Command
         {
             ProxiedPlayer victim = Main.PROXY.getPlayer(strings[0]);
 
-            p.setReconnectServer(victim.getServer().getInfo());
-
-            Bukkit.getPlayer(p.getName()).teleport(Bukkit.getPlayer(victim.getName()));
-
+            p.connect(victim.getServer().getInfo());
 
 
             p.sendMessage(ChatMessageType.CHAT, new ComponentBuilder("You teleported to " + victim.getName() + ".").color(ChatColor.DARK_GREEN).create());
